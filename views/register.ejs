@@ -1,0 +1,48 @@
+<%- include('./partials/header.ejs') %>
+
+    <div
+        class="w-full min-h-screen bg-zinc-300 flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1620503374956-c942862f0372?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover">
+        <div
+            class="w-[70vw] md:w-[60vw] lg:w-[40vw] xl:w-[25vw] bg-white px-4 md:px-8 lg:px-14 py-2 md:py-4 lg:py-6 rounded-[30px] bg-opacity-60 ">
+            <div>
+                <img src="https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png"
+                    class="w-12 mx-[40%] my-2" alt="" srcset="">
+            </div>
+            <h1 class="text-2xl text-center font-semibold text-zinc-700 tracking-tighter leading-none">Create New Account
+            </h1>
+            <form action="/register" method="post">
+                <label  class="text-zinc-500 inline-block mt-2">User Name:</label>
+                <input class="border-2 rounded-md block mt-1 w-full px-3 py-2" type="text" name="username" 
+                    placeholder="Username">
+                <label class="text-zinc-500 inline-block mt-1">Full Name:</label>
+                <input class="border-2 rounded-md block mt-1 w-full px-3 py-2" type="text" name="name" 
+                    placeholder="Full Name">
+                <label class="text-zinc-500 inline-block mt-1">Email address:</label>
+                <input class="border-2 rounded-md block mt-1 w-full px-3 py-2" type="text" name="email" 
+                    placeholder="Email">
+                <label  class="text-zinc-500 inline-block mt-1">Contact No:</label>
+                <input class="border-2 rounded-md block mt-1 w-full px-3 py-2" type="text" name="contact" 
+                    placeholder="Contact">
+                
+                <label for="password" class="mt-1 inline-block text-zinc-500">Password:</label>
+                <input class="border-2 rounded-md block mt-1 w-full px-3 py-2" type="password" name="password"
+                     placeholder="Password">
+                <input
+                    class="border-2 rounded-full block mt-6 w-full px-3 py-2 bg-[rgb(255,0,0)] text-xl text-white border-none rounded-full"
+                    type="submit" value="Create New Account">
+                
+               
+
+            </form>
+
+            
+
+            <div>
+                <p class="text-s  font-semibold  text-zinc-700 mt-2 text-center ">
+                    <a href="/">Already a user ? Login </a>
+                </p>
+            </div>                 
+
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>

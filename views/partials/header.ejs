@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <% if (nav===true) { %>
+        <div class="w-full px-10 py-3 text-white flex justify-between bg-zinc-800  ">
+           <a href="/profile"><h3 class="text-2xl font-semibold flex items-center"><img class="w-12  my-2" src="https://static-00.iconduck.com/assets.00/pinterest-icon-2048x2048-os3lysf9.png" alt="" srcset=""> Pintrest</h3> </a>
+            <div class="flex gap-10 items-center">
+                <a class="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center" href="/profile">
+                Profile
+                </a>
+
+                
+                <a class="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white  after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center" href="/feed">
+                Feed
+                </a>
+                <a href="/logout" class="px-3 py-2 bg-[rgb(255,0,0)]  text-white rounded-lg hover:bg-[rgb(200,0,0)]">Logout</a>
+            </div>
+        </div>
+    <% } %>
+    

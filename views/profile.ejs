@@ -1,0 +1,49 @@
+<%- include('./partials/header') %>
+
+    <div class="profile w-full min-h-screen text-white bg-zinc-800 pt-1 ">
+        <form id="uploadform" action="/fileupload" hidden method="post" enctype="multipart/form-data">
+            <input type="file" name="image">
+        </form>
+        <div class="profdets flex flex-col items-center ">
+            <div class="relative">
+                <span id="uploadicon"
+                    class="w-8 h-8 bottom-0 right-0 cursor-pointer absolute rounded-full flex items-center justify-center bg-zinc-200">
+                    <i class="text-zinc-800 ri-pencil-fill "></i>
+                </span>
+                <div class="w-32 h-32 bg-zinc-200 mt-10 rounded-full overflow-hidden border-none">
+                    <img class="w-full h-full object-cover" src="/images/uploads/<%=user.profileImage%>" alt=""
+                        srcset="">
+                </div>
+            </div>
+
+            <h1 class="text-3xl font-semibold "><%= user.name %></h1>
+            <h3 class="text-md ">@ <%= user.username %></h3>
+            <a href="/edit" class="mt-5 px-7 py-2 bg-zinc-700 rounded-full text-xs font-semibold">Edit</a>
+            <a href="/add" class="px-7 py-2 mt-5 font-semibold rounded-lg bg-[rgb(255,0,0)]">Add New Post</a>
+        </div>
+
+        <div class="cards flex flex-wrap gap-10 px-10 mt-10">
+            <div>
+                <div class="w-52 h-40 bg-zinc-200 rounded-md overflow-hidden">
+                    <img class="w-full h-full object-cover"
+                   
+                        src="/images/uploads/<%=user?.posts[(user.posts.length - 1)]?.image %>"
+                        alt="" srcset="">
+                </div>
+                <a href="/show/posts" class=" inline-block text-xl font-semibold mt-3">Your Uploaded Pins</a>
+                <h5 class="text-sm font-medium  opacity-60 "><%= user.posts.length %></h5>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("#uploadicon").addEventListener("click", function () {
+            document.querySelector("#uploadform input").click();
+        });
+
+        document.querySelector("#uploadform input").addEventListener("change", function () {
+            document.querySelector("#uploadform").submit();
+        })
+    </script>
+    <%- include('./partials/footer') %>
